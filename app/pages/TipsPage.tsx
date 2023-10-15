@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useAtom } from "jotai";
 import { currentUiAtom } from "../state";
 import { Ui } from "../Ui";
@@ -43,7 +44,7 @@ export default function TipsPage() {
             <li>
               Visit{" "}
               <a
-              className="text-primary underline"
+                className="text-primary underline"
                 href="https://convertio.co/epub-txt/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -61,13 +62,21 @@ export default function TipsPage() {
         </div>
       </div>
       <div className="card">
-  <div className="card-body">
-    <h2 className="card-title">Looking for Free Books?</h2>
-    <p>
-      If you're on the hunt for some free reads, check out <a href="https://www.gutenberg.org/browse/scores/top#books-last30" className="btn btn-primary">Project Gutenberg</a>. They've got a ton of great books, and they won't cost you a dime. Happy reading! (and typing)
-    </p>
-  </div>
-</div>
+        <div className="card-body">
+          <h2 className="card-title">Looking for Free Books?</h2>
+          <p>
+            If you're on the hunt for some free reads, check out{" "}
+            <a
+              href="https://www.gutenberg.org/browse/scores/top#books-last30"
+              className="btn btn-primary"
+            >
+              Project Gutenberg
+            </a>
+            . They've got a ton of great books, and they won't cost you a dime.
+            Happy reading! (and typing)
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
