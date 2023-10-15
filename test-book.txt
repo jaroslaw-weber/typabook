@@ -1,0 +1,5 @@
+This is a test text.
+Can be used to test the app.
+
+It has paragraphs and new lines.
+It also has special characters and uppercase characters.

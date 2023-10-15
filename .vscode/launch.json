@@ -1,0 +1,22 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+	  {
+		"type": "node",
+		"request": "launch",
+		"name": "launch",
+		"runtimeExecutable": "npm",
+		"runtimeArgs": [
+		  "run-script",
+		  "dev"
+		],
+		"port": 3000,
+		"skipFiles": [
+		  "<node_internals>/**"
+		],
+		"sourceMaps": true,
+		"cwd": "${workspaceFolder}"
+	  }
+	]
+  }
+  
