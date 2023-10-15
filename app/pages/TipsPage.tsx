@@ -68,7 +68,7 @@ export default function TipsPage() {
             If you're on the hunt for some free reads, check out{" "}
             <a
               href="https://www.gutenberg.org/browse/scores/top#books-last30"
-              className="btn btn-primary"
+              className="text-primary underline"
             >
               Project Gutenberg
             </a>
