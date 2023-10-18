@@ -7,9 +7,9 @@ function getLetterClasses(letter: SingleLetter, progress: number, typingAnimatio
   const result = ["flex-1"];
   if (letter.input) {
     if (letter.character != letter.input) {
-      result.push("text-red-500");
+      result.push("text-error");
     } else {
-      result.push("text-green-800");
+      result.push("text-primary");
     }
   }
 

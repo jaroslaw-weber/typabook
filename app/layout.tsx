@@ -1,6 +1,10 @@
+
+
+import { useAtom } from 'jotai'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { themeAtom } from './state'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -8,6 +12,7 @@ export const metadata: Metadata = {
   title: 'typabook',
   description: 'read more, type faster',
 }
+
 
 export default function RootLayout({
   children,

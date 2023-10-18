@@ -1,11 +1,12 @@
 import { useAtom } from "jotai";
 import WordsPerPageSlider from "../components/WordsPerPageSlider";
-import { currentUiAtom, typingAnimationAtom } from "../state";
+import { currentUiAtom, themeAtom, typingAnimationAtom } from "../state";
 import { Ui } from "../Ui";
 import ResetButton from "../components/ResetButton";
 import ImportButton from "../components/ImportButton";
 import ExportButton from "../components/ExportButton";
 import { TypingAnimation } from "../TypingAnimation";
+import { themes } from "../theme";
 
 export default function SettingsPage() {
   const [currentUi] = useAtom(currentUiAtom);
@@ -14,6 +15,34 @@ export default function SettingsPage() {
   const resetButton = ResetButton();
   const importButton = ImportButton();
   const exportButton = ExportButton();
+
+
+  const [theme ,setTheme] = useAtom(themeAtom)
+
+  const themeSelect = (
+    <div className="form-control w-full">
+      <label className="label">
+        <span className="label-text">Theme</span>
+      </label>
+      <select className="select select-bordered" onChange={e =>{
+        console.log('e',e,e.target.value)
+        setTheme(e.target.value as TypingAnimation)
+      }}>
+        <option disabled selected>
+          {theme}
+        </option>
+        {
+          themes.map(t => {
+            return (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            )
+          })
+        }
+      </select>
+    </div>
+  );
 
   const typingAnimationSelection = (
     <div className="flex flex-col gap-4 w-full">
@@ -54,6 +83,7 @@ export default function SettingsPage() {
         </div>
       </div>
       {typingAnimationSelection}
+      {themeSelect}
       <div className="w-full">{resetButton}</div>
     </div>
   );

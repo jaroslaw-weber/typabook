@@ -3,6 +3,7 @@ import { atomWithStorage } from "jotai/utils";
 import { getCurrentPage, parseBook } from "./utils/bookUtils";
 import { Ui } from "./Ui";
 import { TypingAnimation } from "./TypingAnimation";
+import { defaultTheme } from "./theme";
 
 //export const progressAtom = atom(0);
 const defaultText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam elit, venenatis ac augue quis, faucibus hendrerit libero. Phasellus mi orci, viverra eget aliquam eu, posuere non metus. Sed condimentum justo tellus, in elementum libero tempus non. Nulla purus erat, luctus ut volutpat efficitur, facilisis ac metus. Sed laoreet ipsum est, eu vehicula elit consectetur pellentesque. Nulla elementum lorem quis orci scelerisque varius. Nam venenatis tincidunt felis, eu posuere dui convallis vitae. Phasellus a congue leo. Nam lacinia eros id orci maximus rutrum. Nunc aliquam accumsan vulputate. Sed sed velit at ipsum elementum fermentum sed id sapien. Nam volutpat enim a semper tempor. Praesent hendrerit tortor ipsum, malesuada tempus dolor ullamcorper at. Curabitur neque diam, scelerisque nec sem sit amet, pharetra pretium est. Vivamus in nisl nec arcu elementum iaculis.
@@ -21,6 +22,8 @@ export const userInputAtom = atomWithStorage("user-input", "");
 export const progressAtom = atom((get) => get(userInputAtom).length);
 
 export const maxProgressAtom = atom((get) => get(bookAtom).length);
+
+export const themeAtom = atomWithStorage("theme", defaultTheme);
 
 export const defaultWordsPerPage = 200;
 export const wordsPerPageAtom = atomWithStorage(
