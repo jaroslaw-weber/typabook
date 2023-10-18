@@ -1,12 +1,18 @@
 import { useAtom } from "jotai";
 import WordsPerPageSlider from "../components/WordsPerPageSlider";
-import { currentUiAtom, themeAtom, typingAnimationAtom } from "../state";
+import {
+  caretTypeAtom,
+  currentUiAtom,
+  themeAtom,
+  typingAnimationAtom,
+} from "../state";
 import { Ui } from "../Ui";
 import ResetButton from "../components/ResetButton";
 import ImportButton from "../components/ImportButton";
 import ExportButton from "../components/ExportButton";
 import { TypingAnimation } from "../TypingAnimation";
 import { themes } from "../theme";
+import { CaretType } from "../CaretType";
 
 export default function SettingsPage() {
   const [currentUi] = useAtom(currentUiAtom);
@@ -16,30 +22,56 @@ export default function SettingsPage() {
   const importButton = ImportButton();
   const exportButton = ExportButton();
 
-
-  const [theme ,setTheme] = useAtom(themeAtom)
+  const [theme, setTheme] = useAtom(themeAtom);
+  const [caretType, setCaretType] = useAtom(caretTypeAtom);
 
   const themeSelect = (
     <div className="form-control w-full">
       <label className="label">
         <span className="label-text">Theme</span>
       </label>
-      <select className="select select-bordered" onChange={e =>{
-        console.log('e',e,e.target.value)
-        setTheme(e.target.value as TypingAnimation)
-      }}>
+      <select
+        className="select select-bordered"
+        onChange={(e) => {
+          console.log("e", e, e.target.value);
+          setTheme(e.target.value as TypingAnimation);
+        }}
+      >
         <option disabled selected>
           {theme}
         </option>
-        {
-          themes.map(t => {
-            return (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            )
-          })
-        }
+        {themes.map((t) => {
+          return (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+  const caretTypeSelect = (
+    <div className="form-control w-full">
+      <label className="label">
+        <span className="label-text">Caret</span>
+      </label>
+      <select
+        className="select select-bordered"
+        onChange={(e) => {
+          console.log("e", e, e.target.value);
+          setCaretType(e.target.value as CaretType);
+        }}
+      >
+        <option disabled selected>
+          {caretType}
+        </option>
+        {[CaretType.Square, CaretType.Classic].map((t) => {
+          return (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
@@ -84,6 +116,7 @@ export default function SettingsPage() {
       </div>
       {typingAnimationSelection}
       {themeSelect}
+      {caretTypeSelect}
       <div className="w-full">{resetButton}</div>
     </div>
   );
