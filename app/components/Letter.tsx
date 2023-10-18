@@ -1,6 +1,9 @@
+import { useAtom } from "jotai";
+import { TypingAnimation, getTypingAnimationClasses } from "../TypingAnimation";
+import { typingAnimationAtom } from "../state";
 import { SingleLetter } from "../types/SingleLetter";
 
-const getLetterClasses = (letter: SingleLetter, progress: number) => {
+function getLetterClasses(letter: SingleLetter, progress: number, typingAnimation: TypingAnimation) {
   const result = ["flex-1"];
   if (letter.input) {
     if (letter.character != letter.input) {
@@ -17,15 +20,8 @@ const getLetterClasses = (letter: SingleLetter, progress: number) => {
       result.push("w-3");
     }
     {
-      result.push(
-        "bg-primary",
-        "px-1",
-        "text-white",
-        "rounded",
-        "animate-fade-up",
-        "animate-duration-150",
-        "animate-ease-out"
-      );
+      const animation = getTypingAnimationClasses(typingAnimation);
+      result.push("bg-primary", "px-1", "text-white", "rounded", ...animation);
     }
   } else {
     if (isSpace) {
@@ -38,10 +34,11 @@ const getLetterClasses = (letter: SingleLetter, progress: number) => {
   }
 
   return result.join(" ");
-};
+}
 
 export function Letter(letter: SingleLetter, progress: number) {
-  const classes = getLetterClasses(letter, progress);
+  const [typingAnimation] = useAtom(typingAnimationAtom)
+  const classes = getLetterClasses(letter, progress, typingAnimation);
 
   let display = <div>{letter.character}</div>;
 

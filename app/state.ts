@@ -2,6 +2,7 @@ import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 import { getCurrentPage, parseBook } from "./utils/bookUtils";
 import { Ui } from "./Ui";
+import { TypingAnimation } from "./TypingAnimation";
 
 //export const progressAtom = atom(0);
 const defaultText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quam elit, venenatis ac augue quis, faucibus hendrerit libero. Phasellus mi orci, viverra eget aliquam eu, posuere non metus. Sed condimentum justo tellus, in elementum libero tempus non. Nulla purus erat, luctus ut volutpat efficitur, facilisis ac metus. Sed laoreet ipsum est, eu vehicula elit consectetur pellentesque. Nulla elementum lorem quis orci scelerisque varius. Nam venenatis tincidunt felis, eu posuere dui convallis vitae. Phasellus a congue leo. Nam lacinia eros id orci maximus rutrum. Nunc aliquam accumsan vulputate. Sed sed velit at ipsum elementum fermentum sed id sapien. Nam volutpat enim a semper tempor. Praesent hendrerit tortor ipsum, malesuada tempus dolor ullamcorper at. Curabitur neque diam, scelerisque nec sem sit amet, pharetra pretium est. Vivamus in nisl nec arcu elementum iaculis.
@@ -52,6 +53,8 @@ export const isFinishedAtom = atom(
 
 export const isStartAtom = atom((get) => get(progressAtom) === 0);
 
+
+
 export const accuracyAtom = atom((get) => {
   const userInput = get(userInputAtom);
   //start with 100% accuracy
@@ -88,3 +91,6 @@ function calculateLetterMatchPercentage(str1: string, str2: string) {
 
   return percentage.toFixed(1);
 }
+
+
+export const typingAnimationAtom = atomWithStorage('typing-animation', TypingAnimation.Jump)
