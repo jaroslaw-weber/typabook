@@ -60,14 +60,14 @@ export function getCurrentPage(
   progress: number
 ): SinglePage {
   let result = pages[0];
-  console.log(
+  /*console.log(
     "indexes",
     pages.map((x) => x.index)
-  );
-  console.log("progress", progress);
+  );*/
+  //console.log("progress", progress);
   for (const page of pages) {
     if (progress >= page.index) {
-      console.log("page index", page.index, "progress", progress);
+      //console.log("page index", page.index, "progress", progress);
       result = page;
     } else {
       return result;

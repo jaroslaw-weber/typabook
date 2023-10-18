@@ -73,7 +73,7 @@ export const accuracyAtom = atom((get) => {
   const end = start + testSize;
   const s1 = userInput.substring(start, end);
   const s2 = book.substring(start, end);
-  console.log(`1:${s1}\n\n2:${s2}`);
+ // console.log(`1:${s1}\n\n2:${s2}`);
   return calculateLetterMatchPercentage(s1, s2);
 });
 
