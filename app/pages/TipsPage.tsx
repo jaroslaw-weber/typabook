@@ -6,10 +6,9 @@ import { Ui } from "../Ui";
 export default function TipsPage() {
   const [currentUi] = useAtom(currentUiAtom);
   if (currentUi != Ui.Tips) {
-    return null;
+    return <div/>;
   }
-
-  return (
+  const result = (
     <div className="pt-8 flex flex-col w-1/2 gap-4 pb-16">
       <div className="card">
         <div className="card-body">
@@ -79,4 +78,6 @@ export default function TipsPage() {
       </div>
     </div>
   );
+  
+  return result;
 }

@@ -25,7 +25,7 @@ function getLetterClasses(
     if (isSpace) {
       if (caretType == CaretType.Square) {
         result.push("w-3");
-      }else{
+      } else {
         result.push("w-1");
       }
     }
@@ -58,12 +58,6 @@ function getLetterClasses(
 export function Letter(letter: SingleLetter, progress: number) {
   const [typingAnimation] = useAtom(typingAnimationAtom);
   const [caretType] = useAtom(caretTypeAtom);
-  const classes = getLetterClasses(
-    letter,
-    progress,
-    typingAnimation,
-    caretType
-  );
 
   const isActive = letter.index === progress;
   const caret =
@@ -72,7 +66,7 @@ export function Letter(letter: SingleLetter, progress: number) {
         id="caret"
         className="animate-pulse relative top-0 left-0 text-white flex-shrink "
         style={{
-          width: '1px'
+          width: "1px",
         }}
       >
         |
@@ -86,6 +80,11 @@ export function Letter(letter: SingleLetter, progress: number) {
       <p>{letter.character}</p>
     </div>
   );
-
+  const classes = getLetterClasses(
+    letter,
+    progress,
+    typingAnimation,
+    caretType
+  );
   return <div className={classes}>{display}</div>;
 }
