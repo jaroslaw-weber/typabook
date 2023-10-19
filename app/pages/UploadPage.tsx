@@ -6,9 +6,7 @@ import Upload from "../components/Upload";
 export default function UploadPage() {
   const [currentUi] = useAtom(currentUiAtom);
   console.log('currentUi', currentUi) 
-   if (currentUi != Ui.Upload) {
-    return <div/>;
-  }
+   
   const upload = Upload()
   
   const result = (
@@ -16,6 +14,8 @@ export default function UploadPage() {
        {upload}
     </div>
   );
-
+if (currentUi != Ui.Upload) {
+    return <div/>;
+  }
   return result;
 }

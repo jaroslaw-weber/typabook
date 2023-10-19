@@ -3,8 +3,8 @@ import { bookAtom, currentUiAtom, tutorialCompleteAtom, tutorialStepAtom, userIn
 import { Ui } from "../Ui";
 
 export default function Upload() {
-	const [book, setBook] = useAtom(bookAtom)
-  const [currentUi, setCurrentUi] = useAtom(currentUiAtom);
+	const [, setBook] = useAtom(bookAtom)
+  const [, setCurrentUi] = useAtom(currentUiAtom);
   const [, setUserInput] = useAtom(userInputAtom);
   const [tutorialComplete, setTutorialComplete] = useAtom(tutorialCompleteAtom);
   
