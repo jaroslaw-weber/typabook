@@ -1,11 +1,9 @@
 import { useAtom } from "jotai";
 import { Ui } from "../Ui";
-import Progress from "../components/Progress";
-import { Text } from "../components/Text";
-import TypingInput from "../components/TypingInput";
+import Progress from "../components/progress/Progress";
+import Text from "../components/Text";
 import { currentUiAtom } from "../state";
-import { PageChangeButtons } from "../components/PageChangeButtons";
-import Upload from "../components/Upload";
+import PageChangeButtons  from "../components/PageChangeButtons";
 
 export default function HomePage() {
   const [currentUi] = useAtom(currentUiAtom);

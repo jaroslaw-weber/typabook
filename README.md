@@ -10,3 +10,19 @@ https://github.com/jaroslaw-weber/typabook/assets/9774233/5ac9de93-f3c9-4c29-914
 
 available at:
 https://jaroslaw-weber.github.io/typabook/
+
+
+# how to run on local
+
+```
+npm run dev
+```
+
+# component preview
+
+now it's possible to preview some components with storybook!
+
+run 
+```
+npm run storybook
+```

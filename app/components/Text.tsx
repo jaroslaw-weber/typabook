@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { Letter } from "./Letter";
+import  Letter  from "./Letter";
 import { pagesAtom, playPageChangeAnimationAtom, progressAtom } from "../state";
 import { SingleWord } from "../types/SingleWord";
 import { getCurrentPage } from "../utils/bookUtils";
@@ -14,7 +14,7 @@ function getWordClasses(word: SingleWord) {
   return result.join(" ");
 }
 
-export function Text() {
+export default function Text() {
   const [progress] = useAtom(progressAtom);
   const [pages] = useAtom(pagesAtom);
   const [playPageChangeAnimation] = useAtom(playPageChangeAnimationAtom);

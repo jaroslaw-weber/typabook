@@ -13,7 +13,7 @@ import {
   faStepBackward,
 } from "@fortawesome/free-solid-svg-icons";
 
-export function PageChangeButtons() {
+export default function PageChangeButtons() {
   const [userInput, setUserInput] = useAtom(userInputAtom);
   const [wordsPerPage, setWordsPerPage] = useAtom(wordsPerPageAtom);
   const [maxProgress] = useAtom(maxProgressAtom);
