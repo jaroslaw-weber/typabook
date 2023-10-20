@@ -55,7 +55,8 @@ function getLetterClasses(
   return result.join(" ");
 }
 
-export function Letter(letter: SingleLetter, progress: number) {
+export function Letter(p:{letter: SingleLetter, progress: number}) {
+  const {letter, progress}= p
   const [typingAnimation] = useAtom(typingAnimationAtom);
   const [caretType] = useAtom(caretTypeAtom);
 

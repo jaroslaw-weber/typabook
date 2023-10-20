@@ -29,8 +29,9 @@ export function Text() {
     <div className={"flex w-full flex-wrap py-10 " + animation}>
       {words.map((word, wordIndex) => (
         <div key={wordIndex} className={getWordClasses(word)}>
-          {word.letters.map((letter) =>Letter(letter, progress))
-          }
+          {word.letters.map((letter) => (
+            <Letter key={letter.index} letter={letter} progress={progress} />
+          ))}
         </div>
       ))}
     </div>
