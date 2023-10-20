@@ -5,7 +5,6 @@ import { currentUiAtom, userInputAtom } from "../state";
 import { Ui } from "../Ui";
 
 export default function ImportButton() {
-  return <div/>
   const [, setUserInput] = useAtom(userInputAtom);
   const fileInputRef = useRef<any>(null);
   const [, setCurrentUi] = useAtom(currentUiAtom);
