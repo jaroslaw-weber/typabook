@@ -100,3 +100,6 @@ function calculateLetterMatchPercentage(str1: string, str2: string) {
 
 
 export const typingAnimationAtom = atomWithStorage('typing-animation', TypingAnimation.Jump)
+
+
+export const loadingAtom = atom(true)
