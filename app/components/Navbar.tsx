@@ -11,7 +11,9 @@ import {
   faCog,
   faLightbulb,
   faUpload,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
   const [, setCurrentUi] = useAtom(currentUiAtom);
@@ -22,8 +24,8 @@ export default function Navbar() {
   const highlightInfo = tutorialStep == 1 && !tutorialComplete;
   const highlightUpload = tutorialStep == 2 && !tutorialComplete;
 
-  const highlightStyle = 'bg-primary text-white  animate-pulse'
-  const normalStyle = ''
+  const highlightStyle = "bg-primary text-white  animate-pulse";
+  const normalStyle = "";
 
   const uploadStyle = highlightUpload ? highlightStyle : normalStyle;
   const infoStyle = highlightInfo ? highlightStyle : normalStyle;
@@ -67,6 +69,22 @@ export default function Navbar() {
             >
               <FontAwesomeIcon icon={faLightbulb} />
             </button>
+          </li>
+          <li>
+            <a
+              href="https://github.com/jaroslaw-weber/typabook"
+           
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/jaroslaw-weber/typabook"
+            
+            >
+              <FontAwesomeIcon icon={faStar} />
+            </a>
           </li>
         </ul>
       </div>

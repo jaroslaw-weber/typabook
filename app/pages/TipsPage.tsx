@@ -2,6 +2,9 @@
 import { useAtom } from "jotai";
 import { currentUiAtom } from "../state";
 import { Ui } from "../Ui";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function TipsPage() {
   const [currentUi] = useAtom(currentUiAtom);
@@ -19,6 +22,23 @@ export default function TipsPage() {
             Seamlessly merge reading and typing practice into a single,
             convenient app!
           </p>
+        </div>
+      </div>
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title">Want to support this project?</h2>
+          <p>
+            
+            
+            Give it a star on github!   </p>
+            <div className="pt-4">
+            <a className="btn btn-primary"
+              href="https://github.com/jaroslaw-weber/typabook"
+            
+            >
+            <FontAwesomeIcon size="2xl" icon={faGithub} />
+            </a></div>
+       
         </div>
       </div>
       <div className="card">
@@ -76,6 +96,7 @@ export default function TipsPage() {
           </p>
         </div>
       </div>
+      
     </div>
   );
   
